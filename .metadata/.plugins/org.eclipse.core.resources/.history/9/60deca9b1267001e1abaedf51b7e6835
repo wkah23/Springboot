@@ -1,0 +1,30 @@
+import java.util.Date;
+
+public class UnderstandDI {
+	public static void main(String[] args) {
+		// 날짜를 구하기 위해서는 Data 클래스의 기능에 의존해야 한다.
+//		Date date = new Date();
+//		System.out.println(date);
+	}
+	
+	public static void getDate(Date d) {
+		Date date = d;
+		System.out.println(d);
+	}
+	
+	public static void memberUse1() {
+		// 강한결합 : 직접 생성
+		Member member1 = new Member();
+	}
+	
+	public static void memberUse2(Member m) {
+		// 약한 결합 : 생성된 것을 주입 받음 - 의존 주입 (Dependency Injection)
+		Member member2 = m;  
+	}
+}
+// Member를 사용한다 --> Member의 기능에 의존한다 라는 의미
+class Member {
+	String name;
+	String nickname;
+	public Member() {}
+}

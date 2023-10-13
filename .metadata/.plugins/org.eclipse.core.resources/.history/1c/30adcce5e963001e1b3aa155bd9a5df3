@@ -1,0 +1,8 @@
+package com.study.spring;
+
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+
+public class OtherStudent {
+	
+}

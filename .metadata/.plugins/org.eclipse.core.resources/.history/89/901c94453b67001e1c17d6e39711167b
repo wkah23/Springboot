@@ -1,0 +1,9 @@
+package mytest;
+
+public class ModelUse {
+
+	public static void main(String[] args) {
+		// 지역 변수라 메서드가 종료되면 메모리에서 제거된다.
+		// 힙에 객체가 생성되고 스택에 그 객체의 위피를 저장한 참조변수가 생성된다.
+	}
+}

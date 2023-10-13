@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.study.springboot.jdbc.IDAO">
+	<select id="listDAO" resultType="com.study.springboot.dto.SimpleBbsDTO">
+		select * from simple_bbs order by id desc
+	</select>
+	<select id="viewDAO" resultType="com.study.springboot.dto.SimpleBbsDTO">
+		select * from simple_bbs where id = #{0}
+	</select>
+	<!-- 
+		Map을 통해 파라미터가 전달되므로 parameterType에 패키지를 포함한 클래스 경로를
+		기술하고, 인파라미터 설정시에는 Key값을 이용한다.
+	 -->
+	<insert id="writeDAO" parameterType="java.util.HashMap">
+		insert into simple_bbs (id, writer, title, content)
+			values (simple_bbs_seq.nextval, #{item1}, #{item2}, #{item3})
+	</insert>
+	<delete id="deleteDAO">
+		delete from simple_bbs where id = #{_id}
+	</delete>
+	<select id="articleCount" resultType="_int">
+		select count(*) from simple_bbs
+	</select>	
+</mapper>

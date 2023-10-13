@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mapper 파일을 구성하기 위한 DOCTYPE 설정 -->
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<!-- 서비스 인터페이스를 namespace로 지정한다. -->
+<mapper namespace="com.study.springboot.jdbc.IMyUserDAO">
+	<select id="getUser" resultType="com.study.springboot.jdbc.MyUserDTO">
+		select id, name from myuser
+	</select>
+</mapper>

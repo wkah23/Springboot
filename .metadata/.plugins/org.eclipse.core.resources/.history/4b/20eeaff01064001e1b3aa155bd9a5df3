@@ -1,0 +1,34 @@
+package com.study.spring;
+
+import org.aspectj.lang.ProceedingJoinPoint;
+
+// ASPECT : 공통기능
+// ADVICE : 기능자체 - 경과시간 출력
+// 공통기능을 수행할 클래스 정의
+public class LogAop {
+	// beans.xml에 등록된 표현식에 의해 Student 클래스와 Worker 클래스가
+	// joinpoint로 설정 되었기 때문에 해당클래스의 모든 메서드는 poincut이 됨.
+	public Object loggerAop(ProceedingJoinPoint joinPoint) 
+			throws Throwable {
+		/*
+			현재 호출된 메서드명을 문자열로 변환 후 반환해준다. 즉 실행되는
+			메서드명을 알 수 있다.
+		 */
+		String signatureStr = joinPoint.getSignature().toShortString();
+		// advice를 around로 지정 시 공통기능 수행부분 
+		// 핵심기능 수정전 출력된다.
+		System.out.println(signatureStr + " is start");
+		
+		long st = System.currentTimeMillis();
+		
+		try {
+			// loggerApp의 파라미터로 전달이 되고 실제로 이곳에서 실행이 된다.
+			Object obj = joinPoint.proceed();
+			return obj;
+		} finally {
+			long et = System.currentTimeMillis();
+			System.out.println(signatureStr + " is finished.");
+			System.out.println(signatureStr + " 경과시간 : " + (et - st));
+		}
+	}
+}

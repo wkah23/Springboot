@@ -1,0 +1,7 @@
+package com.study.springboot.bean;
+
+public class PrinterB implements Printer{
+	public void name() {
+		
+	}
+}

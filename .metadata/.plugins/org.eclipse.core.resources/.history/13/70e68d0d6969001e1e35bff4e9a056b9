@@ -1,0 +1,32 @@
+package com.study.springboot.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.study.springboot.dao.ITransaction1DAO;
+import com.study.springboot.dao.ITransaction2DAO;
+
+@Service
+public class BuyTicketService implements IBuyTicketService {
+	// new는 사용하지 않고 자동으로 대입
+	@Autowired
+	ITransaction1DAO transaction1;
+	@Autowired
+	ITransaction2DAO transaction2;
+	
+	public int buy(String consumerId, int amount, String error) {
+		try {
+			/*
+			 	상황 : 현장에서는 표가 발행되었는데 전산에 등록이 안될 때...
+			 */
+			transaction1.pay(consumerId, amount);
+			
+			if (error.equals("1")) {int n = 10 / 0;}
+			
+			transaction2.pay(consumerId, amount);
+			return 1;
+		} catch (Exception e) {
+			return 0;
+		}
+	}
+}

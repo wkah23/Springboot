@@ -1,0 +1,63 @@
+package com.study.spring;
+
+
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class HelloBeanTest
+{
+	public static void main(String[] args) {
+		// xml 설정 파일의 위치를 선언
+		/*
+		 	classpath의 의미를 웹 애플리케이션으로 war로 배포했을 때
+		 	classes 폴더 하위로 클래스, XML 설정 파일들이 위치하게 되는데
+		 	해당 디렉토리를 가리키는 예약어이다.
+		 */
+		String configLocation = "classpath:beans.xml";
+		// 1.IoC �����̳� ����  
+		ApplicationContext context = new GenericXmlApplicationContext(configLocation);
+		
+		// 2. Hello Bean ��������
+		Hello hello = (Hello)context.getBean("hello");
+		
+		// List ���
+		List<String> myList = hello.getNames();
+		for (String value : myList) {
+			System.out.println("List : " + value);
+		}
+		
+		// Set ���
+		Set<Integer> mySet1 = hello.getNums();
+		for (Integer value : mySet1) {
+			System.out.println("Set : " + value);
+		}
+		
+		// Map ���
+		Map<String, Integer> map = hello.getAges();
+		
+		// ���1 : entrySet
+		for (Map.Entry<String, Integer> entry : map.entrySet()) {
+			System.out.println("Map1 : " + entry.getKey() + " - " + entry.getValue());
+		}
+		
+		// ���2 : keySet
+		for (String key : map.keySet()) {
+			Integer value = map.get(key);
+			System.out.println("Map2 : " + key + " - " + value);
+		}
+		
+		// ���3 : Iterator
+		Iterator<String> iterator = map.keySet().iterator();
+		
+		while (iterator.hasNext()) {
+			String key = iterator.next();
+			Integer value = map.get(key);
+			System.out.println("Map3 : " + key + " - " + value);
+		}
+	}
+}

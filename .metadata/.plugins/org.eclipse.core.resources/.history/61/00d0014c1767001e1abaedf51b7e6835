@@ -1,0 +1,7 @@
+package com.study.springboot.bean;
+
+public class PrinterA {
+	public void print(String message) {
+		System.out.println("Printer A : " + message);
+	}
+}

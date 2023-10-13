@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.study.springboot.dao.ISimpleBbsDAO">
+	<select id="listDAO" resultType="com.study.springboot.dto.SimpleBbsDTO">
+		select * from simple_bbs order by id desc
+	</select>
+	<!-- 한개의 게시물 인출 -->
+	<select id="viewDAO" resultType="com.study.springboot.dto.SimpleBbsDTO">
+		<!-- 한개이므로 파라미터가 있어야 함 -->
+		select * from simple_bbs where id = #{0}
+	</select>
+	<!-- 게시물 등록. DTO의 멤버변수명을 통해 저장된 값을 쿼리문에 적용한다. -->
+	<insert id="writeDAO">
+	<!-- 결과 값이 없으므로 리턴타입이 필요 없음 -->
+		insert into simple_bbs (id, writer, title, content)
+			values (simple_bbs_seq.nextval, #{param1}, #{param2}, #{param3})
+	</insert>
+	<delete id="deleteDAO">
+	<!-- 결과 값이 없으므로 리턴타입이 필요 없음 -->
+		delete from simple_bbs where id = #{_id}
+	</delete>
+</mapper>

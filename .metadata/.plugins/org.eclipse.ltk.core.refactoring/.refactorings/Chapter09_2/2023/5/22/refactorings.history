@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Ex02_ReturnForExit&apos; to &apos;OverloadingUse&apos;&#x0D;&#x0A;- Original project: &apos;Chapter09_2&apos;&#x0D;&#x0A;- Original element: &apos;Ex02_ReturnForExit&apos;&#x0D;&#x0A;- Renamed element: &apos;OverloadingUse&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Ex02_ReturnForExit&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Ex02_ReturnForExit.java[Ex02_ReturnForExit" matchStrategy="1" name="OverloadingUse" qualified="false" references="true" similarDeclarations="false" stamp="1685412220603" textual="false" version="1.0"/>
+</session>

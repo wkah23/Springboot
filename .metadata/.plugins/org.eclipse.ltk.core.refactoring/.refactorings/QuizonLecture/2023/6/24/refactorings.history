@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;QuLottoCollection&apos; to &apos;QuLottoCollection_Nook&apos;&#x0D;&#x0A;- Original project: &apos;QuizonLecture&apos;&#x0D;&#x0A;- Original element: &apos;QuLottoCollection&apos;&#x0D;&#x0A;- Renamed element: &apos;QuLottoCollection_Nook&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;QuLottoCollection&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{QuLottoCollection.java[QuLottoCollection" matchStrategy="1" name="QuLottoCollection_Nook" qualified="false" references="true" similarDeclarations="false" stamp="1686640180945" textual="false" version="1.0"/>
+</session>

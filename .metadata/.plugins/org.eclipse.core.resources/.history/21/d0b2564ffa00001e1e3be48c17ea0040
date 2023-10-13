@@ -1,0 +1,17 @@
+class Book3{
+	string autor;
+}
+
+public class Ex03_toString2
+{
+
+	public static void main(String[] args)
+	{
+		Book3 myBook = new Book3();
+		myBook.autor = "홍길동";
+		System.out.println(myBook.autor);
+		System.out.println(myBook);
+
+	}
+
+}

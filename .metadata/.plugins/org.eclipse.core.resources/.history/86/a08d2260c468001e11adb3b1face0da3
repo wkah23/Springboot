@@ -1,0 +1,7 @@
+package com.study.springboot.jdbc;
+
+import java.util.ArrayList;
+
+public interface IDAO {
+	ArrayList<UserDTO> getEmployee();
+}
