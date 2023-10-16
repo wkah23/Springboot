@@ -89,6 +89,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\DevData\Spring Boot\Ex29_Security-taglibs"/>
+			<item value="C:\DevData\Spring Boot\Ex28_Security-StatusCheck"/>
 			<item value="C:\DevData\Spring Boot\Ex27_Security-StatusCheck"/>
 			<item value="C:\DevData\Spring Boot\Ex26_Security-LoginForm"/>
 			<item value="C:\DevData\Spring Boot\Ex27_Security-LoginForm"/>

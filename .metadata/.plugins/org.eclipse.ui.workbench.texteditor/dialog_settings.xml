@@ -10,8 +10,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
-		<item key="selection" value="방탄소년단"/>
+		<item key="selection" value=""/>
 		<list key="findhistory">
+			<item value="From"/>
 			<item value="il"/>
 			<item value="방탄소년단"/>
 			<item value="``"/>
@@ -21,6 +22,7 @@
 			<item value="c"/>
 		</list>
 		<list key="replacehistory">
+			<item value="Form"/>
 			<item value="오마이걸"/>
 		</list>
 	</section>

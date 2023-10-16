@@ -21,3 +21,31 @@ create table simple_bbs (
 
 drop sequence simple_bbs_seq;
 create sequence simple_bbs_seq;
+
+create table Transaction1 (
+    consumerId varchar2(10),
+    amount number
+);
+
+create table Transaction2 (
+    consumerId varchar2(10),
+    amount number
+);
+
+create table Transaction3 (
+    consumerId varchar2(10),
+    amount number
+);
+drop table user_list;
+create table user_list (
+    name varchar2(20) primary key,
+    password varchar2(100),
+    authority varchar(20),
+    enabled number(1)
+);
+
+insert into user_list values ('user', '$2a$10$CYkRM6C0e0FPWJcuuS/fsuIColt8PaGRm8XOE7dB1Hbmf9tjEXj5', 'ROLE_USER', 1);
+insert into user_list values ('admin', '$2a$10$CYkRM6C0e0FPWJcuuS/fsuIColt8PaGRm8XOE7dB1Hbmf9tjEXj5', 'ROLE_ADMIN', 1);
+commit;
+select * from user_list;
+
